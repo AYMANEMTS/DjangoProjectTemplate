@@ -1,0 +1,15 @@
+<h1>Register</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      {{field.label_tag}}
+      {{field}}
+      {% if field.errors %}
+        {{field.errors}}
+      {% endif %}
+    {% endfor %}
+    <input type="submit" value="Register">
+    <br><br>
+    <a href="{% url 'auth:login' %}">Login</a>
+</form>

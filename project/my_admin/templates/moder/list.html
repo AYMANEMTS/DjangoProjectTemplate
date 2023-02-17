@@ -1,0 +1,20 @@
+<h1>List</h1>
+<br>
+
+<a href="{% url 'my_admin:create' %}">creat</a>
+
+<br>
+{% if context %}
+  
+{% for i in context %}
+
+<a href="{% url 'my_admin:detail' i.id %}">{{i.title}}</a>
+<a href="{% url 'my_admin:update' i.id %}">update</a>
+<a href="{% url 'my_admin:delet' i.id %}">delet</a>
+  
+{% endfor %}
+{% else %}
+
+<p>Sorry you d'ont have any model</p>
+
+{% endif %}

@@ -1,0 +1,10 @@
+<h1>Profile</h1>
+
+<br>
+<h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
+<h3>{{request.user.email}}</h3>
+<h3>{{request.user.username}}</h3>
+<img src="{{request.user.profile.avatar.url}}"/>
+<br>
+<br>
+<a href="{% url 'auth:login' %}">Logout</a>

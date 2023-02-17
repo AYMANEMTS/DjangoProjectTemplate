@@ -29,13 +29,17 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/single.css' %}" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
     <!-- Topbar Start -->
-    <div class="container-fluid px-0 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-4 text-center bg-secondary py-3">
+    <div class="container-fluid px-0 d-none d-lg-block" >
+        <div class="row gx-0" >
+            <div class="col-lg-4 text-center bg-light-subtle py-3">
                 <div class="d-inline-flex align-items-center justify-content-center">
                     <i class="bi bi-envelope fs-1 text-primary me-3"></i>
                     <div class="text-start">
@@ -51,7 +55,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 text-center bg-secondary py-3">
+            <div class="col-lg-4 text-center bg-light py-3">
                 <div class="d-inline-flex align-items-center justify-content-center">
                     <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
                     <div class="text-start">
@@ -75,18 +79,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                <a href="menu.html" class="nav-item nav-link">Menu & Pricing</a>
-                <a href="team.html" class="nav-item nav-link">Master Chefs</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="service.html" class="dropdown-item">Our Service</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                <a href="{% url 'cake:index' %}" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'cake:about' %}" class="nav-item nav-link">About Us</a>
+                <a href="{% url 'cake:menu' %}" class="nav-item nav-link">Menu & Pricing</a>
+                <a href="{% url 'cake:chef' %}" class="nav-item nav-link">Master Chefs</a>
+
+                <a href="{% url 'cake:contact' %}" class="nav-item nav-link">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -99,11 +97,11 @@
 
 
      <!-- Footer Start -->
-     <div class="container-fluid bg-img text-secondary" style="margin-top: 90px">
+     <div class="container-fluid bg-primary text-secondary" style="margin-top: 90px;background-color: aqua;">
         <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-4 col-md-6 mb-lg-n5">
-                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
+            <div class="row gx-5 ">
+                <div class="col-lg-4 col-md-6 mb-lg-n5 " style="height: 350px;">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-light border-inner p-4">
                         <a href="index.html" class="navbar-brand">
                             <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>CakeZone</h1>
                         </a>
@@ -111,12 +109,12 @@
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-6">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                    <div class="row gx-5 text-white" style="font-size:20px;font-weight: bold;font-family: Arial, Helvetica, sans-serif;">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5 ">
                             <h4 class="text-primary text-uppercase mb-4">Get In Touch</h4>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">123 Street, New York, USA</p>
+                                <p class="mb-0">Street, New York,123 USA</p>
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-envelope-open text-primary me-2"></i>
@@ -132,23 +130,24 @@
                                 <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <h4 class="text-primary text-uppercase mb-4">Quick Links</h4>
-                            <div class="d-flex flex-column justify-content-start">
-                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                                <a class="text-secondary" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5 text-dark">
+                            <h4 class="text-primary text-uppercase  mb-4 ">Quick Links</h4>
+                            <div class="d-flex flex-column  justify-content-start text-dark ">
+                                <a class="text-black mb-2"  href="#"><i class="bi bi-arrow-right text-dark me-2"></i>Home</a>
+                                <a class="text-black mb-2"  href="#"><i class="bi bi-arrow-right text-dark me-2"></i>About Us</a>
+                                <a class="text-black mb-2"  href="#"><i class="bi bi-arrow-right text-dark me-2"></i>Our Services</a>
+                                <a class="text-black mb-2"  href="#"><i class="bi bi-arrow-right text-dark me-2"></i>Meet The Team</a>
+                                <a class="text-black mb-2"  href="#"><i class="bi bi-arrow-right text-dark me-2"></i>Latest Blog</a>
+                                <a class="text-black"  href="#"><i class="bi bi-arrow-right text-dark me-2"></i>Contact Us</a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <h4 class="text-primary text-uppercase mb-4">Newsletter</h4>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5 bg-black">
+                          
+                            <h4 class="text-primary text-uppercase mb-4 bg-light" style="border: 5px;border-radius: 3px;">Newsletter</h4>
                             <p>Amet justo diam dolor rebum lorem sit stet sea justo kasd</p>
-                            <form action="">
-                                <div class="input-group">
-                                    <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                            <form action=""  style="width: 185px;" >
+                                <div class="input-group" >
+                                    <input type="text" style="height: 40px;" class="form-control border-white p-3" placeholder="Your Email">
                                     <button class="btn btn-primary">Sign Up</button>
                                 </div>
                             </form>
@@ -157,6 +156,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="container-fluid text-secondary py-4" style="background: #111111;">
         <div class="container text-center">
@@ -180,6 +180,8 @@
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 
 </html>

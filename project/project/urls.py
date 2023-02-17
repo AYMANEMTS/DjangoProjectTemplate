@@ -18,8 +18,16 @@ from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cake/',include('cakeapp.urls'))
+    path('cake/',include('cakeapp.urls',namespace='cake')),
+    path('moderateur/',include('my_admin.urls',namespace='my_admin')),
+    path('auth/',include('user_auth.urls',namespace='auth')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+
+
+

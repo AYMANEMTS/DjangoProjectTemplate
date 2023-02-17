@@ -7,9 +7,9 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="display-4 text-uppercase text-white">Contact Us</h1>
-                <a href="">Home</a>
+                <a href="{% url 'cake:index' %}">Home</a>
                 <i class="far fa-square text-primary px-2"></i>
-                <a href="">Contact</a>
+                <a href="{% url 'cake:contact' %}">Contact</a>
             </div>
         </div>
     </div>
@@ -44,25 +44,27 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <form>
+                    <form method="post">
+                        {% csrf_token %}
                         <div class="row g-3">
                             <div class="col-sm-6">
-                                <input type="text" class="form-control bg-light border-0 px-4" placeholder="Your Name" style="height: 55px;">
+                                <input type="text" class="form-control bg-light border-0 px-4" placeholder="Your Name" name="name" style="height: 55px;">
                             </div>
                             <div class="col-sm-6">
-                                <input type="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;">
+                                <input type="email" class="form-control bg-light border-0 px-4" placeholder="Your Email"  name="emaltext" style="height: 55px;">
                             </div>
                             <div class="col-sm-12">
-                                <input type="text" class="form-control bg-light border-0 px-4" placeholder="Subject" style="height: 55px;">
+                                <input type="text" class="form-control bg-light border-0 px-4" placeholder="Subject" name="subject" style="height: 55px;">
                             </div>
                             <div class="col-sm-12">
-                                <textarea class="form-control bg-light border-0 px-4 py-3" rows="4" placeholder="Message"></textarea>
+                                <textarea class="form-control bg-light border-0 px-4 py-3" rows="4" placeholder="Message" name="message"></textarea>
                             </div>
                             <div class="col-sm-12">
-                                <button class="btn btn-primary border-inner w-100 py-3" type="submit">Send Message</button>
+                                <button class="btn btn-primary border- w-100 py-3" type="submit">Send Message</button>
                             </div>
                         </div>
                     </form>
+                      
                 </div>
             </div>
         </div>
